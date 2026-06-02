@@ -8,13 +8,13 @@ To prevent the model from relying on teacher help as a shortcut, SocraticPO furt
 
 ## Overview
 
-![SocraticPO framework](figure/1-framework.pdf)
+![SocraticPO framework](figure/1-framework.png)
 
 SocraticPO modifies only the rollout process while keeping the standard expected-reward objective, making it compatible with existing policy-gradient backends such as Reinforce++.
 
 ## Reward Design
 
-![Reward design](figure/2-reward.pdf)
+![Reward design](figure/2-reward.png)
 
 The reward design combines:
 
@@ -23,7 +23,7 @@ The reward design combines:
 
 ## Training Dynamics
 
-![Training dynamics](figure/3-train-step.pdf)
+![Training dynamics](figure/3-train-step.png)
 
 We observe a two-stage pattern: the student first improves its ability to answer correctly after guidance, and later internalizes these corrections into stronger unassisted performance as reward decay shifts credit toward earlier independent correctness.
 
@@ -40,15 +40,15 @@ SocraticPO improves over strong RL and self-distillation baselines, and ablation
 
 ## Additional Analyses
 
-![Ground-truth access](figure/4-ground-truth.pdf)
+![Ground-truth access](figure/4-ground-truth.png)
 
 We analyze whether teachers should access ground-truth answers or reference solutions. Such access can help when the teacher follows the teaching protocol well, but may hurt when it leaks answer-specific hints.
 
-![Ablation](figure/5-ablation.pdf)
+![Ablation](figure/5-ablation.png)
 
 Ablation results show that removing reward decay significantly hurts performance, especially with stronger teachers.
 
-![Teacher-student KL](figure/6-KL.pdf)
+![Teacher-student KL](figure/6-KL.png)
 
 Teacher-student KL analysis suggests that SocraticPO does not simply make the student imitate the teacher. Instead, the teacher acts as an interactive guide for reasoning correction.
 
