@@ -1,0 +1,11 @@
+- name: teacher_guidance_agent
+  _target_: agent_r1.agent_flow.agent_env_loop.AgentEnvLoop
+  env_type: teacher_guidance
+  teacher_endpoint: ${oc.env:TEACHER_ENDPOINT,null}
+  teacher_model_name: ${oc.env:TEACHER_MODEL_NAME,null}
+  teacher_api_key: ${oc.env:TEACHER_API_KEY,null}
+  teacher_temperature: 0.2
+  teacher_max_tokens: 1024
+  guidance_mode: ${oc.env:TEACHER_GUIDANCE_MODE,teacher}
+  retry_prompt: "${oc.env:TEACHER_RETRY_PROMPT,Your answer is incorrect. Please try again.}"
+  reveal_answer: False
