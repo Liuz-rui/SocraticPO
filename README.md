@@ -12,6 +12,22 @@ To prevent the model from relying on teacher help as a shortcut, SocraticPO furt
 
 SocraticPO modifies only the rollout process while keeping the standard expected-reward objective, making it compatible with existing policy-gradient backends such as Reinforce++.
 
+## Environment Preparation
+
+SocraticPO is developed based on `verl`; configuring `verl` is sufficient to run the project. Please configure the runtime according to the official [`verl` installation guide](https://verl.readthedocs.io/en/latest/start/install.html). The current setup is based on `verl==0.7.0`.
+
+After setting up `verl`, replace the original `reward_score` directory in the `verl` source tree with the `reward_score` directory provided in this repository, so that the modified SocraticPO reward logic is used during training.
+
+## Training Launch
+
+Configure the working directory, conda environment, CUDA module, model path, dataset path, teacher endpoint, and related training parameters in [`job-qwen3-4b-tg-main.sh`](job-qwen3-4b-tg-main.sh).
+
+Launch training with:
+
+```bash
+bash job-qwen3-4b-tg-main.sh
+```
+
 ## Reward Design
 
 ![Reward design](figure/2-reward.png)
