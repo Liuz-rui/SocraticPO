@@ -73,7 +73,7 @@ bash job-qwen3-4b-tg-main.sh
 ```
 
 ## Citation
-
+```
 @misc{liu2026socraticpopolicyoptimizationinteractive,
       title={SocraticPO: Policy Optimization via Interactive Guidance}, 
       author={Zirui Liu and Jie Ouyang and Qi Liu and Xianquan Wang and Jiayu Liu and Tingyue Pan and Qingchuan Li and Jing Sha and Zhenya Huang and Shijin Wang and Enhong Chen},
@@ -83,3 +83,4 @@ bash job-qwen3-4b-tg-main.sh
       primaryClass={cs.LG},
       url={https://arxiv.org/abs/2606.09887}, 
 }
+```
