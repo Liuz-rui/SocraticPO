@@ -58,7 +58,13 @@ SocraticPO is developed based on `verl`; configuring `verl` is sufficient to run
 
 After setting up `verl`, replace the original `reward_score` directory in the `verl` source tree with the `reward_score` directory provided in this repository, so that the modified SocraticPO reward logic is used during training.
 
-Configure the working directory, conda environment, CUDA module, model path, dataset path, teacher endpoint, and related training parameters in [`job-qwen3-4b-tg-main.sh`](job-qwen3-4b-tg-main.sh).
+Create teacher model with:
+
+```bash
+job-teacher-qwen3-4b.sh
+```
+
+Configure the working directory, conda environment, CUDA module, model path, dataset path, teacher endpoint(Check the port and IP address set for job-teacher-qwen3-4b.sh (which can be found in the log)), and related training parameters in [`job-qwen3-4b-tg-main.sh`](job-qwen3-4b-tg-main.sh).
 
 Launch training with:
 
@@ -68,4 +74,12 @@ bash job-qwen3-4b-tg-main.sh
 
 ## Citation
 
-Coming soon.
+@misc{liu2026socraticpopolicyoptimizationinteractive,
+      title={SocraticPO: Policy Optimization via Interactive Guidance}, 
+      author={Zirui Liu and Jie Ouyang and Qi Liu and Xianquan Wang and Jiayu Liu and Tingyue Pan and Qingchuan Li and Jing Sha and Zhenya Huang and Shijin Wang and Enhong Chen},
+      year={2026},
+      eprint={2606.09887},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2606.09887}, 
+}
